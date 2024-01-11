@@ -44,6 +44,9 @@ def signout(request):
     return redirect("home")
 
 def signin(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+
     if request.method == 'GET':
         return render(request, "signin.html" ,{
             'form': AuthenticationForm

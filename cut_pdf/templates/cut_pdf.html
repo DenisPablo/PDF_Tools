@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="display-1 text-center">Unir PDFs</h1>
+            <form method="POST" enctype="multipart/form-data" class="card card-body mt-5">
+                {% csrf_token %}
+
+            <div class="container mt-5">
+                <p class="text-center text-info">Seleccione archivo: </p>
+                
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="pdf_file" name="pdf_file" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="start_page" class="form-label">Pagina de Inicio</label>
+                    <input type="number" class="form-control" id="start_page" name="start_page" min="1" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="end_page" class="form-label">Pagina de fin</label>
+                    <input type="number" class="form-control" id="end_page" name="end_page" min="1" required>
+                </div>
+            </div>
+
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{error}}
+                    </div>
+                    {% endif %}
+                    
+                <button type="submit" class="btn btn-primary">Recortar Paginas</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

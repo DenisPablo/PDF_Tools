@@ -24,5 +24,7 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('signin/', views.signin, name='signin'),
     path('signout/', views.signout, name='signout'),
-    path('tools/', include('join_pdf.urls'))
+    path('tools/', include('join_pdf.urls')),
+    path('tools/', include('pdf_to_word.urls')),
+    path('tools/', include('cut_pdf.urls'))
 ]

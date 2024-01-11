@@ -54,6 +54,7 @@ def join_PDF(request):
         with open(merged_pdf_path, 'rb') as merged_pdf:
             response = HttpResponse(merged_pdf.read(), content_type='application/pdf')
             response['Content-Disposition'] = f'attachment; filename="{os.path.basename(merged_pdf_path)}"'
+            os.remove(merged_pdf_path)
             return response
         
     return render(request, 'join_pdfs.html')

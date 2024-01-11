@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="display-1 text-center">Convertir PDF a WORD</h1>
+            <form method="POST" enctype="multipart/form-data" class="card card-body mt-5">
+                {% csrf_token %}
+
+            <div class="container mt-5">
+                <p class="text-center text-info">Ingrese un archivo PDF para obtener su nuevo archivo WORD</p>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="pdf_file" name="pdf_file" required>
+                </div>
+            </div>
+
+                <button type="submit" class="btn btn-primary">Convertir</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
