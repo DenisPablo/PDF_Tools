@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h1 class="display-1 text-center">Unir PDFs</h1>
+            <form method="POST" enctype="multipart/form-data" class="card card-body mt-5">
+                {% csrf_token %}
+                <div class="mb-3 text-center">
+                <label for="pdf_file1">Selecciona el primer PDF: </label>
+                <input type="file" name='pdf_file1' required><br>
+                </div>
+
+                <div class="mb-3 text-center">
+                <label for="pdf_file2">Selecciona el segundo PDF: </label>
+                <input type="file" name="pdf_file2" required><br>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Unir PDFs</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

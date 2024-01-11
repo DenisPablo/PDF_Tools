@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main class="container py-5">
+  <section class="card card-body">
+    <h1 class="text-center">
+      Bienvenido a nuestra herramienta de Unión de PDFs
+    </h1>
+    <p>
+      Combina fácilmente varios archivos PDF en uno solo con nuestra aplicación
+      en línea. ¡Es rápido, sencillo y gratuito!
+    </p>
+    <p>
+      Selecciona los archivos PDF que deseas unir, haz clic en el botón de unión
+      y descarga tu nuevo documento PDF consolidado.
+    </p>
+    <p>¡Gracias por usar nuestra herramienta!</p>
+  
+    {% if not user.is_authenticated %}
+    
+    <div class="d-flex justify-content-center mt-3">
+      <a href="/signin/" class="btn btn-primary btn-log" style="margin-right: 5%;">Iniciar Sesión</a>
+      <a href="/signup/" class="btn btn-primary btn-log">Registrarse</a>
+    </div>
+    {% endif %}
+  </section>
+</main>
+{% endblock %}
