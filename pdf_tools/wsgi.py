@@ -1,5 +1,5 @@
 """
-WSGI config for Unir_PDF project.
+WSGI config for pdf_tools project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Unir_PDF.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pdf_tools.settings')
 
 application = get_wsgi_application()

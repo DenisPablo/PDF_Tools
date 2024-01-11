@@ -1,5 +1,5 @@
 """
-URL configuration for PDF_A_Audio project.
+URL configuration for pdf_tools project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,13 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from UnirPDF import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('signup/', views.signup, name='signup'),
-    path('signin/', views.signin, name='signin'),
-    path('join_PDF/', views.join_PDF, name='join_PDFs'),
-    path('signout/', views.signout, name='signout')
 ]
