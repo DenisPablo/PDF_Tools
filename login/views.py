@@ -1,21 +1,19 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-import PyPDF2
-import os
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
 
 def signup(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+
     if request.method == 'GET': 
         return render(request, 'signup.html', {
             'form': UserCreationForm()

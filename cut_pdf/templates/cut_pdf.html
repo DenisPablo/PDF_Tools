@@ -5,7 +5,7 @@
 <main class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="display-1 text-center">Unir PDFs</h1>
+            <h1 class="display-1 text-center">Cortar</h1>
             <form method="POST" enctype="multipart/form-data" class="card card-body mt-5">
                 {% csrf_token %}
 
@@ -16,17 +16,16 @@
                     <input type="file" class="form-control" id="pdf_file" name="pdf_file" required>
                 </div>
 
-                <div class="mb-3">
-                    <label for="start_page" class="form-label">Pagina de Inicio</label>
-                    <input type="number" class="form-control" id="start_page" name="start_page" min="1" required>
-                </div>
+            <div class="row mb-3">
+                    <div class="col-md-6">
+                        <input type="number" class="form-control" id="start_page" name="start_page" min="1" placeholder="Pagina de inicio" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label for="end_page" class="form-label">Pagina de fin</label>
-                    <input type="number" class="form-control" id="end_page" name="end_page" min="1" required>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control" id="end_page" name="end_page" min="1" placeholder="Pagina Final" required>
+                    </div>
                 </div>
             </div>
-
                     {% if error %}
                     <div class="alert alert-danger" role="alert">
                         {{error}}
